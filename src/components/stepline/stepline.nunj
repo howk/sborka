@@ -1,0 +1,15 @@
+{% macro stepline(step, final) %}
+	<div class="stepline {% if final %}stepline--final{% elseif step > 0 %}stepline--step{{ step }}{% endif %}">
+    <span class="stepline__progress">
+      <span class="stepline__progress-bar"></span>
+    </span>
+    <div class="stepline__steps">
+		{% for item in steplineCheckout %}
+      <div class="stepline__step">
+        <span class="stepline__number">{{ item.step }}</span>
+        <span class="stepline__title">{{ item.name }}</span>
+      </div>
+		{% endfor %}
+    </div>
+	</div>
+{% endmacro %}

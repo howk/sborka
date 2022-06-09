@@ -1,0 +1,227 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../../components/menu/menu.nunj" import menu %}
+{% from "../../components/button/button.nunj" import button %}
+{% from "../../components/icon/icon.nunj" import icon %}
+{% from "../../components/stepline/stepline.nunj" import stepline %}
+
+{% block content %}
+
+	{% include '../../components/header/header.nunj' %}
+
+	<main class="content-grid">
+		<section class="page-checkout">
+
+			<div class="container stepline-container">
+				{{ stepline(3, finish=false) }}
+			</div>
+
+			<div class="container billing-container">
+
+				<h1 class="h1">Billing Information</h1>
+
+				<ul class="options-list-horizontal">
+					<li class="options-list-horizontal__item">
+						<span class="custom-input">
+							<input class="custom-input__input" id="paymentMethodCreditCard" type="radio" name="paymentMethod" checked>
+							<span class="custom-input__visual"></span>
+						</span>
+						<label class="options-list-horizontal__label" for="paymentMethodCreditCard">Pay with Credit Card</label>						
+					</li>
+					<li class="options-list-horizontal__item">
+						<span class="custom-input">
+							<input class="custom-input__input" id="paymentMethodPayPal" type="radio" name="paymentMethod">
+							<span class="custom-input__visual"></span>
+						</span>
+						<label class="options-list-horizontal__label" for="paymentMethodPayPal">
+							{{ icon({
+									iconName: 'paypal',
+									className: 'icon-paypal',
+									attributes: 'viewBox="0 0 85 22"'
+							}) }}
+						</label>					
+					</li>
+				</ul>					
+
+				<div class="card-credentials">
+					<label class="card-credentials__label" for="formCardholderName">Name on card</label>
+					<input id="formCardholderName" class="input-field" type="text" placeholder="Placeholder Text">
+					<label class="card-credentials__label" for="formCardNumber">Card number</label>
+					<div class="card-credentials__row">
+						<div class="card-credentials__col">
+							<input class="input-field" type="number">
+						</div>					
+						<div class="card-credentials__col">
+							<input class="input-field" type="number">
+						</div>
+						<div class="card-credentials__col">
+							<input class="input-field" type="number">
+						</div>		
+						<div class="card-credentials__col">
+							<input class="input-field" type="number">
+						</div>
+					</div>
+					<div class="card-credentials__row">
+						<div class="card-credentials__col">
+							<label class="card-credentials__label" for="formCardNumber">Expire date</label>
+							<input class="input-field" type="text">
+						</div>
+						<div class="card-credentials__col">
+							<label class="card-credentials__label" for="formCardNumber">CVV code <span title="Three-digit number at the back of your card" class="infotip">?</span></label>
+							<input class="input-field" type="number">
+						</div>							
+					</div>			
+				</div>
+
+				<ul class="options-list">
+					<li class="options-list__item">
+						<span class="custom-input">
+							<input class="custom-input__input" id="paymentSaveCredentials" type="checkbox" name="paymentSaveCredentials">
+							<span class="custom-input__visual"></span>
+						</span>
+						<label class="options-list__label" for="paymentSaveCredentials">Save information of this credit card</label>		
+					</li>				
+					<li class="options-list__item">
+						<span class="custom-input">
+							<input class="custom-input__input" id="paymentAccept" type="checkbox" name="paymentAccept">
+							<span class="custom-input__visual"></span>
+						</span>
+						<label class="options-list__label" for="paymentAccept">I accept the <a href="#">terms and conditions</a> and the <a href="#">Privacy Policies</a></label>						
+					</li>
+				</ul>
+
+				<div class="buttons-container">
+					<a class="button button-secondary button-hollow" href="#">Back</a>
+					<button class="button button-primary">Check out</button>
+				</div>
+
+			</div>
+		</section>
+
+		<aside class="sidebar">
+			<section class="container-sidebar container-sidebar--bordered">
+				<h2 class="h2">My basket</h2>
+				<div class="cart-sidebar">
+					<div class="cart-sidebar__item">
+						<div class="cart-sidebar__left">
+							<a href="#" aria-hidden="true" tabindex="-1">
+								<img
+									src="assets/images/item-photo1.jpg"
+									srcset="assets/images/item-photo1_x2.jpg 2x"
+									class="cart-sidebar__photo"
+									alt="Amet minim mollit non deserunt ullamco est sit">
+							</a>
+						</div>
+						<div class="cart-sidebar__right">
+							<h3 class="cart-sidebar__name">
+								<a href="#">Amet minim mollit non deserunt ullamco est sit</a>
+							</h3>
+							<div class="cart-sidebar__bar">
+								<div class="input-quantity">
+									<button class="input-quantity__button" disabled>
+										{{ icon({
+											iconName: 'button-minus',
+											className: 'input-quantity__icon',
+											attributes: 'viewBox="0 0 21 20"'
+										}) }}								
+									</button>
+									<input class="input-quantity__field" type="number" value="1">
+									<button class="input-quantity__button">
+										{{ icon({
+											iconName: 'button-plus',
+											className: 'input-quantity__icon',
+											attributes: 'viewBox="0 0 21 20"'
+										}) }}									
+									</button>
+								</div>
+								<p class="cart-sidebar__price">$ 525</p>
+							</div>
+						</div>						
+						<button class="button-close" title="Remove this item from your basket">
+							{{ icon({
+								iconName: 'button-close',
+								className: 'button-close__icon',
+								attributes: 'viewBox="0 0 19 18"'
+							}) }}							
+						</button>
+					</div>
+
+					<div class="cart-sidebar__item">
+						<div class="cart-sidebar__left">
+							<a href="#" aria-hidden="true" tabindex="-1">
+								<img
+									src="assets/images/item-photo2.jpg"
+									srcset="assets/images/item-photo2_x2.jpg 2x"
+									class="cart-sidebar__photo"
+									alt="Amet minim mollit non deserunt ullamco est sit">
+							</a>
+						</div>
+						<div class="cart-sidebar__right">
+							<h3 class="cart-sidebar__name">
+								<a href="#">Amet minim mollit non</a>
+							</h3>
+							<div class="cart-sidebar__bar">
+								<div class="input-quantity">
+									<button class="input-quantity__button" disabled>
+										{{ icon({
+											iconName: 'button-minus',
+											className: 'input-quantity__icon',
+											attributes: 'viewBox="0 0 21 20"'
+										}) }}								
+									</button>
+									<input class="input-quantity__field" type="number" value="1">
+									<button class="input-quantity__button">
+										{{ icon({
+											iconName: 'button-plus',
+											className: 'input-quantity__icon',
+											attributes: 'viewBox="0 0 21 20"'
+										}) }}									
+									</button>
+								</div>
+								<p class="cart-sidebar__price">$ 1 525</p>
+							</div>
+						</div>						
+						<button class="button-close" title="Remove this item from your basket">
+							{{ icon({
+								iconName: 'button-close',
+								className: 'button-close__icon',
+								attributes: 'viewBox="0 0 19 18"'
+							}) }}							
+						</button>
+					</div>					
+				</div>
+			</section>
+			<section class="container-sidebar container-sidebar--bordered">
+				<h2 class="h2">Promo code</h2>
+				<div class="input-group promocode">
+					<input class="input-field" type="text">
+					<button class="button button-primary">Apply</button>
+				</div>
+			</section>
+			<div class="container-sidebar order-summary">
+				<table class="order-summary-table">
+					<tbody>
+						<tr>
+							<td class="order-summary-table__cell-name">Subtotal</td>
+							<td class="order-summary-table__cell-value">$1 050</td>
+						</tr>
+						<tr>
+							<td class="order-summary-table__cell-name">Tax</td>
+							<td class="order-summary-table__cell-value">$100</td>
+						</tr>	
+						<tr>
+							<td class="order-summary-table__cell-name">Shipping</td>
+							<td class="order-summary-table__cell-value">$150</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td class="order-summary-table__cell-name-total">Total</td>
+							<td class="order-summary-table__cell-value-total">$1 300</td>
+						</tr>	
+					</tfoot>
+				</table>		
+			</div>
+		</aside>
+	</main>
+{% endblock content %}

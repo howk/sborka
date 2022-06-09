@@ -1,0 +1,51 @@
+.header {
+	padding: 27px 0 22px 0;
+	border-bottom: 1px #cfcfcf solid;
+	&__container {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: stretch;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	&__left {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-right: 10px;
+	}
+	&__center {
+		display: flex;
+		justify-content: center;
+		align-items: center;		
+		flex-grow: 1;
+		flex-shrink: 1;		
+		padding-left: 10px;
+		padding-right: 10px;
+		@include mq($max-width: 777px) {
+			& .menu {
+				display: none;
+			}
+		}				
+	}	
+	&__right {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;			
+		padding-left: 10px;
+		& .button-search {
+			margin-right: 26px;
+		}		
+		& .button-burger {
+			margin-left: 29px;
+			display: none;
+			@include mq($max-width: 777px) {
+				& {
+					display: block;
+				}
+			}				
+		}			
+	}
+
+}

@@ -1,0 +1,135 @@
+@mixin stepline-step-active {
+	border-color: #3366ff;
+	color: #000;
+}
+@mixin stepline-step-completed {
+	border-color: #3366ff;
+	background-color: #3366ff;
+	color: #fff;
+}
+
+.stepline {
+	width: 100%;
+	position: relative;
+	$self: &;
+	&__steps {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;		
+	}
+	&__progress {
+		position: absolute;
+		left: 0;
+		top: 9px;
+		width: 100%;
+		border-top: 1px #d5d5d5 solid;
+	}
+	&__progress-bar {
+		position: absolute;
+		left: 0;
+		top: -1px;
+		width: 0;
+		border-top: 1px #3366ff solid;
+	}	
+	&__step {
+		position: relative;
+	}
+	&__number {
+		width: 18px;
+		height: 18px;
+		font-size: 10px;
+		font-weight: 500;
+		border: 1px #d5d5d5 solid;
+		border-radius: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #d5d5d5;
+		background-color: #fff;
+	}
+	&__title {
+		position: absolute;
+		font-size: 14px;
+		line-height: 14px;
+		color: #000;
+		top: 27px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&--step1 {
+		#{$self}__step:nth-child(1) {
+			#{$self}__number {
+				@include stepline-step-active;
+			}
+		}
+	}
+	&--step2 {
+		#{$self}__progress-bar {
+			width: calc(100%/3);
+		}			
+		#{$self}__step:nth-child(1) {
+			#{$self}__number {
+				@include stepline-step-completed;
+			}
+		}
+		#{$self}__step:nth-child(2) {
+			#{$self}__number {
+				@include stepline-step-active;
+			}
+		}		
+	}
+	&--step3 {
+		#{$self}__progress-bar {
+			width: calc(100%/3 + 100%/3);
+		}			
+		#{$self}__step:nth-child(1) {
+			#{$self}__number {
+				@include stepline-step-completed;
+			}
+		}
+		#{$self}__step:nth-child(2) {
+			#{$self}__number {
+				@include stepline-step-completed;
+			}
+		}
+		#{$self}__step:nth-child(3) {
+			#{$self}__number {
+				@include stepline-step-active;
+			}
+		}						
+	}
+	&--step4 {
+		#{$self}__progress-bar {
+			width: 100%;
+		}					
+		#{$self}__step:nth-child(1) {
+			#{$self}__number {
+				@include stepline-step-completed;
+			}
+		}
+		#{$self}__step:nth-child(2) {
+			#{$self}__number {
+				@include stepline-step-completed;
+			}
+		}
+		#{$self}__step:nth-child(3) {
+			#{$self}__number {
+				@include stepline-step-completed;
+			}
+		}		
+		#{$self}__step:nth-child(4) {
+			#{$self}__number {
+				@include stepline-step-active;
+			}
+		}						
+	}
+	&--final {
+		#{$self}__progress-bar {
+			width: 100%;
+		}			
+		#{$self}__number {
+			@include stepline-step-completed;
+		}		
+	}
+}

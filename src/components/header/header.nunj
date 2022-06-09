@@ -1,0 +1,44 @@
+<header class="header">
+	<div class="container header__container">
+
+		<div class="header__left">
+			<a class="logo" href="#">
+				{{ icon({
+					iconName: 'logo',
+					className: 'logo__picture',
+					attributes: 'viewBox="0 0 88 32"'
+				}) }}			
+			</a>
+		</div>
+
+		<div class="header__center">
+			{{ menu() }}
+		</div>
+
+		<div class="header__right">
+			<button class="button-search">
+				{{ icon({
+					iconName: 'search',
+					className: 'button-search__icon',
+					attributes: 'viewBox="0 0 24 24"'
+				}) }}
+			</button>
+			<a class="button-cart" href="#">
+				{{ icon({
+					iconName: 'cart',
+					className: 'button-cart__icon',
+					attributes: 'viewBox="0 0 24 21"'
+				}) }}
+				<span class="button-cart__value">2</span>
+			</a>
+			<button class="button-burger">
+				{{ icon({
+					iconName: 'button-burger',
+					className: 'button-burger__icon',
+					attributes: 'viewBox="0 0 29 22"'
+				}) }}			
+			</button>
+		</div>
+
+	</div>
+</header>

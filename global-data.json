@@ -1,0 +1,56 @@
+{
+	"menuItems": [
+		{
+			"name": "Women's",
+			"path": "#"
+		},
+		{
+			"name": "Men's",
+			"path": "#"
+		},
+		{
+			"name": "Home",
+			"path": "#"
+		},
+		{
+			"name": "Travel",
+			"path": "#"
+		},
+		{
+			"name": "Beauty",
+			"path": "#"
+		},
+		{
+			"name": "Sale",
+			"path": "#"
+		}							
+	],
+	"steplineCheckout": [
+		{
+			"step": "1",
+			"name": "Account"
+		},
+		{
+			"step": "2",
+			"name": "Shipping"
+		},
+		{
+			"step": "3",
+			"name": "Billing"
+		},
+		{
+			"step": "4",
+			"name": "Review"
+		}						
+	],
+	"someData": [
+		{
+			"title": "Item 1",
+			"text": "Desc 1"
+		},
+		{
+			"title": "Item 2",
+			"text": "Desc 2"
+		}
+	]
+}

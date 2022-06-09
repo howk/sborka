@@ -1,0 +1,65 @@
+.wrapper {
+	position: relative;
+	display: grid;
+	width: 100%;
+	min-height: 100%;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	min-width: 768px;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-checkout {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.billing-container {
+	max-width: 630px;
+	& .card-credentials {
+		margin-left: -30px;
+		margin-right: -30px;		
+		margin-bottom: 40px;
+	}
+	.options-list {
+		margin-bottom: 38px;
+	}
+}
+
+.stepline-container {
+	margin-left: 80px;
+	margin-right: 80px;
+	margin-bottom: 85px;
+}
+
+.content-grid {
+	display: grid;
+	grid-template-columns: 1fr 410px;
+	grid-template-rows: 1fr;
+	@include mq($max-width: 1200px) {
+		& {
+			grid-template-columns: 1fr;
+		}
+		& .sidebar {
+			display: none;
+		}
+	}			
+}
+
+.container-sidebar {
+	padding: 40px;
+	&--bordered {
+		border-bottom: 1px #cfcfcf solid;
+	}
+}
+
+.buttons-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
