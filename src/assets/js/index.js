@@ -14,12 +14,10 @@ class ProjectApp {
 		this.modules = {};
 		document.addEventListener('DOMContentLoaded', () => {
 			document.documentElement.classList.remove('_loading');
-
 			const inputQualityElems = document.querySelectorAll('.input-quantity');
 			if (inputQualityElems.length) {
 				const inputQualityArr = Array.from(inputQualityElems);
 				inputQualityArr.forEach(input => {
-					console.log(input);
 					const btnIncrease = input.querySelector('.input-quantity__button[data-action=increase]');
 					const btnDecrease = input.querySelector('.input-quantity__button[data-action=decrease]');
 					const inputField = input.querySelector('.input-quantity__field');
