@@ -102,6 +102,7 @@
 			<section class="container-sidebar container-sidebar--bordered">
 				<h2 class="h2">My basket</h2>
 				<div class="cart-sidebar">
+					<div class="cart-sidebar__empty">Basket is empty</div>
 					<div class="cart-sidebar__item">
 						<div class="cart-sidebar__left">
 							<a href="#" aria-hidden="true" tabindex="-1">
@@ -117,8 +118,8 @@
 								<a href="#">Amet minim mollit non deserunt ullamco est sit</a>
 							</h3>
 							<div class="cart-sidebar__bar">
-								<div class="input-quantity">
-									<button class="input-quantity__button" disabled>
+								<div class="input-quantity" data-max="10">
+									<button class="input-quantity__button" data-action="decrease" disabled>
 										{{ icon({
 											iconName: 'button-minus',
 											className: 'input-quantity__icon',
@@ -126,7 +127,7 @@
 										}) }}								
 									</button>
 									<input class="input-quantity__field" type="number" value="1">
-									<button class="input-quantity__button">
+									<button class="input-quantity__button" data-action="increase">
 										{{ icon({
 											iconName: 'button-plus',
 											className: 'input-quantity__icon',
@@ -134,7 +135,7 @@
 										}) }}									
 									</button>
 								</div>
-								<p class="cart-sidebar__price">$ 525</p>
+								<p class="cart-sidebar__price">$ <span data-initial="525" data-class="priceValue">525</span></p>
 							</div>
 						</div>						
 						<button class="button-close" title="Remove this item from your basket">
@@ -161,8 +162,8 @@
 								<a href="#">Amet minim mollit non</a>
 							</h3>
 							<div class="cart-sidebar__bar">
-								<div class="input-quantity">
-									<button class="input-quantity__button" disabled>
+								<div class="input-quantity" data-max="10">
+									<button class="input-quantity__button" data-action="decrease" disabled>
 										{{ icon({
 											iconName: 'button-minus',
 											className: 'input-quantity__icon',
@@ -170,7 +171,7 @@
 										}) }}								
 									</button>
 									<input class="input-quantity__field" type="number" value="1">
-									<button class="input-quantity__button">
+									<button class="input-quantity__button" data-action="increase">
 										{{ icon({
 											iconName: 'button-plus',
 											className: 'input-quantity__icon',
@@ -178,7 +179,7 @@
 										}) }}									
 									</button>
 								</div>
-								<p class="cart-sidebar__price">$ 1 525</p>
+								<p class="cart-sidebar__price">$ <span data-initial="1 525" data-class="priceValue">1 525</span></p>
 							</div>
 						</div>						
 						<button class="button-close" title="Remove this item from your basket">
@@ -203,21 +204,21 @@
 					<tbody>
 						<tr>
 							<td class="order-summary-table__cell-name">Subtotal</td>
-							<td class="order-summary-table__cell-value">$1 050</td>
+							<td class="order-summary-table__cell-value">$<span id="summarySubtotal">2 050</span></td>
 						</tr>
 						<tr>
 							<td class="order-summary-table__cell-name">Tax</td>
-							<td class="order-summary-table__cell-value">$100</td>
+							<td class="order-summary-table__cell-value">$<span id="summaryTax">100</span></td>
 						</tr>	
 						<tr>
 							<td class="order-summary-table__cell-name">Shipping</td>
-							<td class="order-summary-table__cell-value">$150</td>
+							<td class="order-summary-table__cell-value">$<span id="summaryShipping">150</span></td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
 							<td class="order-summary-table__cell-name-total">Total</td>
-							<td class="order-summary-table__cell-value-total">$1 300</td>
+							<td class="order-summary-table__cell-value-total">$<span id="summaryTotal">1 300</span></td>
 						</tr>	
 					</tfoot>
 				</table>		

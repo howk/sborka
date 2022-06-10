@@ -361,6 +361,12 @@
 }
 
 .cart-sidebar {
+	&__empty {
+		text-align: center;
+		color: #8c8c8c;
+		font-size: 14px;
+		display: none;
+	}
 	&__item {
 		display: flex;
 		justify-content: flex-start;
