@@ -70,13 +70,14 @@ class ProjectApp {
 
 			const cartElement = document.querySelector('.cart-sidebar');
 			const summaryParent = document.querySelector('.order-summary-table');
+			const cartHeaderElement = document.querySelector('.header .button-cart__value');
 			const summaryElements = {
 				subtotal: document.getElementById('summarySubtotal'),
 				tax: document.getElementById('summaryTax'),
 				shipping: document.getElementById('summaryShipping'),
 				total: document.getElementById('summaryTotal'),
 			};
-			const cart = new Cart(cartElement, summaryElements, summaryParent);
+			const cart = new Cart(cartElement, summaryElements, summaryParent, cartHeaderElement);
 		});
 	}
 }

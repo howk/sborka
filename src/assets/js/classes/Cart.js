@@ -1,8 +1,9 @@
 class Cart {
-	constructor(cartElem, summaryElements, summary) {
+	constructor(cartElem, summaryElements, summary, cartHeader) {
 		this.cartElem = cartElem;
 		this.summaryElements = summaryElements;
 		this.summaryParent = summary;
+		this.cartHeader = cartHeader;
 		this.handleItemsEvents();
 	}
 
@@ -65,6 +66,9 @@ class Cart {
 				if (!this.getItemsCount()) {
 					this.cartElem.querySelector('.cart-sidebar__empty').style.display = 'block';
 					this.summaryParent.style.display = 'none';
+					this.cartHeader.style.display = 'none';
+				} else {
+					this.cartHeader.innerText = this.getItemsCount();
 				}
 			});
 			btnIncrease.addEventListener('click', () => {
